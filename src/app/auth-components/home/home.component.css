@@ -7,7 +7,6 @@
     align-items: center; 
     position: relative;
   
-     
    
     /* Centre le contenu verticalement */
    
@@ -87,7 +86,8 @@ z-index: 1;  /* Élévation pour être au-dessus des autres éléments */
   transform: translate(-50%, -50%); /* Centre le contenu parfaitement */
   z-index: 2;
   margin-top: 500px;
-  width: 85%;
+  width: 97%;
+  background-color: #f1f3f5;
 }
 
 .about-us h2 {
@@ -98,6 +98,7 @@ z-index: 1;  /* Élévation pour être au-dessus des autres éléments */
  border-bottom: 2px solid #333; /* Ajoute une barre horizontale de 2 pixels solide de couleur grise */
  padding-bottom: 10px; 
  font-family: cursive; 
+ color: #333; 
 }
    /* Espace entre le titre et le paragraphe */
 
@@ -106,7 +107,8 @@ z-index: 1;  /* Élévation pour être au-dessus des autres éléments */
   display: inline-block; /* Permet au paragraphe de se comporter comme un bloc en ligne */
   vertical-align:  middle ; 
   line-height: 2; /* Par exemple, pour avoir 1.5 fois la taille de la police */
-
+  margin-right: 70px;
+  margin-left: 70px;
   font-size: 20px;
   font-family: cursive; 
 /* Centre le paragraphe verticalement par rapport au titre */
@@ -135,7 +137,8 @@ z-index: 1;  /* Élévation pour être au-dessus des autres éléments */
   transform: translate(-50%, -50%); /* Centre le contenu parfaitement */
   z-index: 1.5;
   margin-top: 890px;
-  width: 85%; /* Assurez-vous que le contenu objectives est affiché au-dessus du contenu précédent */
+  width: 97%;
+  background-color: #f7f5ee; /* Assurez-vous que le contenu objectives est affiché au-dessus du contenu précédent */
 }
 
 .objectives h2 {
@@ -145,6 +148,7 @@ font-family: cursive;
  font-size: 50px; /* Taille de la police */
   border-bottom: 2px solid #333; /* Ajoute une barre horizontale de 2 pixels solide de couleur grise */
   padding-bottom: 10px; /* Espace sous la barre horizontale */
+  color: #333; 
 }
 
 .objectives p {
@@ -152,6 +156,8 @@ font-family: cursive;
   vertical-align: middle; /* Centre le paragraphe verticalement par rapport au titre */
   line-height: 1.5; /* Hauteur de ligne */
   font-size: 20px;
+  margin-right: 70px;
+  margin-left: 70px;
   font-family: cursive; 
  /* Taille de la police */
 }
@@ -178,7 +184,7 @@ font-family: cursive;
   left: 50%; /* Centre le contenu horizontalement */
   transform: translate(-50%, -50%); /* Centre le contenu parfaitement */
   z-index: 1.5;
-  margin-top: 430px;
+  margin-top: 500px;
   /* Assurez-vous que le contenu objectives est affiché au-dessus du contenu précédent */
 }
 
@@ -191,8 +197,8 @@ font-family: cursive;
   padding-bottom: 10px; 
   font-family: cursive; 
   white-space: nowrap; /* Force le titre à rester sur une seule ligne */
-
-/* Espace sous la barre horizontale */
+  color: #333; 
+  /* Espace sous la barre horizontale */
 }
 .content-wrapper {
   display: flex; /* Utiliser Flexbox pour aligner les cadres horizontalement */
@@ -243,7 +249,7 @@ font-family: cursive;
     left: 50%; /* Centre le contenu horizontalement */
     transform: translate(-50%, -50%); /* Centre le contenu parfaitement */
     z-index: 1.5;
-    margin-top: 280px;
+    margin-top: 260px;
     /* Assurez-vous que le contenu objectives est affiché au-dessus du contenu précédent */
   }
   
@@ -256,8 +262,8 @@ font-family: cursive;
     padding-bottom: 10px; 
     font-family: cursive; 
     white-space: nowrap; /* Force le titre à rester sur une seule ligne */
-  
-  /* Espace sous la barre horizontale */
+    color: #333; 
+    /* Espace sous la barre horizontale */
   }
 
 
@@ -286,3 +292,84 @@ font-family: cursive;
 .social-icons a:hover {
     color: #555;
 }
+
+.site {
+    text-align: center; /* Centrer le texte horizontalement */
+    position: absolute; /* Position absolue pour placer le contenu "objectives" */
+    top: calc(50% + 100px); /* Positionner 100 pixels en dessous de la moitié de la hauteur de la fenêtre */
+    left: 50%; /* Centre le contenu horizontalement */
+    transform: translate(-50%, -50%); /* Centre le contenu parfaitement */
+    z-index: 1.5;
+    margin-top: 850px;
+    /* Assurez-vous que le contenu objectives est affiché au-dessus du contenu précédent */
+  }
+  
+  .site h2 {
+    display: inline-block; /* Permet au titre de se comporter comme un bloc en ligne */
+    text-align: left; /* Alignement du texte à gauche */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px; /* Taille de la police */
+    border-bottom: 2px solid #333; /* Ajoute une barre horizontale de 2 pixels solide de couleur grise */
+    padding-bottom: 10px; 
+    font-family: cursive; 
+    white-space: nowrap; 
+    color: #333; 
+  
+  /* Espace sous la barre horizontale */
+  }
+
+  .body {
+    position: absolute; /* Position absolue pour couvrir tout le conteneur parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir tout le conteneur */
+    background-position: center; /* Centre l'image de fond */
+    z-index: -1; /* Assurez-vous que l'image de fond est en arrière-plan */
+}
+.footer {
+    position: relative; /* Le footer reste fixé en bas de la fenêtre */
+    bottom: 0; /* Le footer est collé au bas de la fenêtre */
+    width: 100%; /* Le footer prend toute la largeur de la fenêtre */
+    background-color: #333; /* Couleur de fond du footer */
+    color: #fff; /* Couleur du texte du footer */
+    padding: 20px 0; /* Ajoute un peu d'espace intérieur en haut et en bas du footer */
+    text-align: center; 
+    margin-top: 130%;
+    height: 220px;/* Centre le texte à l'intérieur du footer */
+  }
+  
+  .footer-content {
+    display: flex; /* Utilisation de Flexbox pour aligner les éléments horizontalement */
+    justify-content: space-between; /* Répartit les éléments sur toute la largeur */
+    align-items: center; 
+    /* Centre les éléments verticalement */
+}
+
+.footer-left {
+    flex: 1; 
+    text-align: left; /* Fait en sorte que cet élément prenne le plus d'espace possible */
+}
+
+.footer-right {
+    margin-left: auto;
+    text-align: left;  /* Décale cet élément vers la droite autant que possible */
+}
+.icon-light {
+    color: #fff; /* Couleur des icônes sur un fond sombre */
+}
+
+.footer-center{
+    text-align: center;
+}
+.socialicons {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #333;
+    padding: 8px;
+    border-radius: 10px;
+    width: 50%;
+}
+
+

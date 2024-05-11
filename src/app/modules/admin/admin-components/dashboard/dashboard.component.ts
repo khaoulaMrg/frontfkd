@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../../../customer/customer-services/customer.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AdminService } from '../../admin-services/admin.service';
 
@@ -85,27 +85,26 @@ export class DashboardComponent implements OnInit {
 
 
   
-
   approveAndPostCategory(categoryId: number) {
-    // Approuver la catégorie
-    this.adminService.approveCategory(categoryId).subscribe(
-      approvalResponse => {
-        console.log('Catégorie approuvée avec succès:', approvalResponse);
-  
-        // Ensuite, poster la catégorie approuvée
-        this.adminService.sendCategory(approvalResponse.id).subscribe(
-          postResponse => {
-            console.log('Catégorie postée avec succès:', postResponse);
-            // Peut-être que vous devez effectuer d'autres actions après avoir approuvé et posté la catégorie
-          },
-          postError => {
-            console.error('Erreur lors de la post de la catégorie:', postError);
-          }
-        );
-      },
-      approvalError => {
+    this.adminService.approveCategory(categoryId).pipe(
+      catchError(approvalError => {
         console.error('Erreur lors de l\'approbation de la catégorie:', approvalError);
-      }
-    );
+        throw approvalError; // Renvoyer l'erreur pour la gestion ultérieure
+      })
+    ).subscribe(approvalResponse => {
+      console.log('Catégorie approuvée avec succès:', approvalResponse);
+  
+      this.adminService.sendCategory(approvalResponse.id).pipe(
+        catchError(postError => {
+          console.error('Erreur lors de la post de la catégorie:', postError);
+          throw postError; // Renvoyer l'erreur pour la gestion ultérieure
+        })
+      ).subscribe(postResponse => {
+        console.log('Catégorie postée avec succès:', postResponse);
+        // Peut-être que vous devez effectuer d'autres actions après avoir approuvé et posté la catégorie
+      });
+    });
+  
   }
-}  
+  
+}

@@ -12,7 +12,7 @@ export class DemandeService {
   constructor(private http: HttpClient) { }
 
   // Ajoutez la méthode pour récupérer les catégories postées par l'admin
-  getPostedCategories(): Observable<Category[]> {
-    const url = `${this.SERVER_URL}posted`;
+  getApprovedAndPostedCategories(): Observable<Category[]> {
+    const url = `${this.SERVER_URL}approved-and-posted-categories`;
     return this.http.get<Category[]>(url);
   }}

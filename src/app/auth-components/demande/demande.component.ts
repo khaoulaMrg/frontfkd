@@ -18,17 +18,18 @@ export class DemandeComponent implements OnInit {
   constructor(private demandeService: DemandeService) { }
 
   ngOnInit(): void {
-    this.loadPostedCategories();
+    this.loadApprovedAndPostedCategories();
   }
-  loadPostedCategories(): void {
-    this.demandeService.getPostedCategories().subscribe(
-      (categories: Category[]) => {
-        this.postedCategories = categories;
-        console.log('Catégories postées récupérées avec succès :', categories);
+  loadApprovedAndPostedCategories() {
+    this.demandeService.getApprovedAndPostedCategories().subscribe({
+      next: (categories: Category[]) => {
+        this.categories = categories;
       },
-      (error) => {
-        console.error('Erreur lors de la récupération des catégories postées:', error);
+      error: (error) => {
+        console.error('Erreur lors de la récupération des catégories :', error);
       }
-    );
+    });
   }
+  
+  
 }  

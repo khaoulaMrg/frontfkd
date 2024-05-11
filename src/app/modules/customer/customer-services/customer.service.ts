@@ -12,10 +12,9 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
 
+ 
   postCategory(categoryDto: any): Observable<any> {
-    return this.http.post<[]>(BASIC_URL + "api/customer/category", categoryDto, {
-      headers: this.createAuthorizationHeader()
-    });
+    return this.http.post<any>(BASIC_URL + "api/customer/category", categoryDto);
   }
 
   getAllCategories(): Observable<any> {

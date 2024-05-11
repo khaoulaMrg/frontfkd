@@ -22,6 +22,7 @@ import { HomeComponent } from './auth-components/home/home.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmploiComponent } from './auth-components/emploi/emploi.component';
+import { StageComponent } from './auth-components/stage/stage.component';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { EmploiComponent } from './auth-components/emploi/emploi.component';
     AppComponent,
     SignupComponent,
     LoginComponent,DemandeComponent,HomeComponent,
-    EmploiComponent
+    EmploiComponent,StageComponent
   ],
   imports: [
     BrowserModule,
