@@ -74,6 +74,9 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+
+  
+
   getAllCategories() {
     this.categories= [];
     this.service.getAllCategories().subscribe((res) => {
